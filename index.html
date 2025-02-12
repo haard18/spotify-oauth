@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify User Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        img { max-width: 100px; margin-right: 10px; border-radius: 10px; }
+        #data { text-align: left; max-width: 600px; margin: auto; }
+    </style>
+</head>
+<body>
+
+    <h1>Spotify User Data</h1>
+    <button onclick="loginWithSpotify()">Login with Spotify</button>
+    <button onclick="fetchUserData()">Fetch My Data</button>
+
+    <div id="data"></div>
+
+    <script src="src/script.ts"></script>
+
+</body>
+</html>
