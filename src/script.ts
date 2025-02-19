@@ -1,6 +1,6 @@
 const clientId = "965e50908f3d482aae1da55191ef3f5a"; 
 const redirectUri = "http://127.0.0.1:5173"; 
-const scope = "user-top-read user-follow-read";
+const scope = "user-top-read user-follow-read user-read-recently-played";
 
 async function loginWithSpotify() {
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;

@@ -35,7 +35,19 @@ app.post("/fetch-data", async (req, res) => {
         res.status(500).json({ error: "Failed to fetch data" });
     }
 });
-
+app.post('/check-following',async(req,res)=>{
+    const accessToken = req.body.access_token;
+    const artistId = req.body.artistId;
+    try{
+        const response = await axios.get(`https://api.spotify.com/v1/me/top/artists?limit=10`,{
+            headers:{Authorization:`Bearer ${accessToken}`}
+        })
+        res.json({isFollowing:response.data[0]})
+    }catch(error){
+        console.error("Error checking following:",error.response?.data || error.message);
+        res.status(500).json({error:"Failed to check following"})
+    }
+})
 // 🎯 Start Server
 const PORT = 3000;
 app.listen(PORT, () => {
